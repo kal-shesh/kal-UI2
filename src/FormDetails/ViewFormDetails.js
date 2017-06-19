@@ -14,11 +14,19 @@ class ViewFormDetails extends Component {
         super(props);
         var component = this;
         var fetch = new FetchClass();
-        fetch.getForms((data)=> component.setState({forms: data.forms.data, filtersForms: data.forms.metadata}));
+        fetch.getFormDetials(props.match.params.id,function(data){
+            console.info(data);
+            component.setState({formModel: data.data, steps : data.metadata.steps})
+            fetch.getFormDetials(data.metadata.form_type,function(data){
+                console.info(data);
+                component.setState({mock : data})
+            });
+        });
 
         this.state = {
             formModel: {},
-            steps:{}
+            steps:[],
+            mock :this.getMockOfTofes()
         };
         injectTapEventPlugin()
     }
@@ -93,26 +101,6 @@ class ViewFormDetails extends Component {
                             "Medical Profile": {
                                 "id": "/properties/Soldiers Request/properties/Medical Profile",
                                 "type": "integer"
-                            },
-                            "Medical Profile set date": {
-                                "id": "/properties/Soldiers Request/properties/Medical Profile set date",
-                                "type": "string"
-                            },
-                            "Permanent Service Start": {
-                                "id": "/properties/Soldiers Request/properties/Permanent Service Start",
-                                "type": "string"
-                            },
-                            "Rank": {
-                                "id": "/properties/Soldiers Request/properties/Rank",
-                                "type": "string"
-                            },
-                            "Unit": {
-                                "id": "/properties/Soldiers Request/properties/Unit",
-                                "type": "string"
-                            },
-                            "education": {
-                                "id": "/properties/Soldiers Request/properties/education",
-                                "type": "string"
                             }
                         },
                         "type": "object"
@@ -161,7 +149,7 @@ class ViewFormDetails extends Component {
             }
         };
 
-        const mock = this.getMockOfTofes();
+        //this.setState({mock :this.getMockOfTofes()});
         // console.log(mock);
         return (
             <MuiThemeProvider>
@@ -171,11 +159,11 @@ class ViewFormDetails extends Component {
                     </Tab>
                     <Tab label="Form">
                         <Paper style={paperStyle} zDepth={3}>
-                            <AppBar title={mock.name}
+                            <AppBar title={this.state.mock.name}
                                     />
 
                             <div id="SchemaForm" style={formDivStyle}>
-                                <SchemaForm  dir="rtl" style={formStyle} schema={mock.schema} model={this.state.formModel}
+                                <SchemaForm  dir="rtl" style={formStyle} schema={this.state.mock.schema} model={this.state.formModel}
                                              onModelChange={() => console.log("MODELCHANGE")} formDefaults={this.state.formModel}
                                              refs="myinput"/>
                             </div>

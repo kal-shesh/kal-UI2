@@ -2,32 +2,22 @@ import React, { Component } from 'react';
 import SearchBar from '../HomePage/SearchBar';
 import FormsList from '../HomePage/FormsList';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import Col from 'react-bootstrap/lib/Col';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
+import FetchClass from '../FetchClass';
 
 class MyForms extends Component {
     constructor(){
         super();
+        var user = 'aa';
         var component = this;
         var fetch = new FetchClass();
-        fetch.getForms((data)=> component.setState({forms:data.forms,filtersForms:data.forms}));
-
+        fetch.getMyForms(user,function (data) {
+            console.info(data);
+            component.setState({forms:data.forms,filtersForms:data.forms});
+        });
         var forms = [
-            {
-                "displayName": "tofesHul",
-                "id": "hul",
-                "jpeg": "http://files.softicons.com/download/web-icons/free-web-icon-pack-1-by-rockettheme/png/128x128/earth.png",
-                "description": "a form to ask premission to hul",
-                creationDate : new Date(),
-                updateDate : new Date(),
-            },
-            {
-                "displayName": "tofes haarachat keva",
-                "id": "haaracha",
-                "jpeg": "http://files.softicons.com/download/holidays-icons/desktop-halloween-icons-by-aha-soft/png/128x128/Death.png",
-                "description": "a form to ask premission to hul"
-            }
+
         ];
         this.state = {forms:forms,filtersForms:forms};
     }
