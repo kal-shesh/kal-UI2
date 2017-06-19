@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Checkbox from 'material-ui/Checkbox';
+import Paper from 'material-ui/Paper';
+
+
 //import './App.css';
 
 class FormItem extends Component {
@@ -10,7 +12,9 @@ class FormItem extends Component {
     createAdditionalInfo(){
         if (this.props.item.creationDate != undefined){
             return (
-                <CardText>
+                <div>
+                    <div>Creation Date :{this.props.item.creationDate.toDateString()}</div>
+                    <div>Last update date:{this.props.item.updateDate.toDateString()}</div>
                     {
                         this.props.item.approves.map((approve) => ( <Checkbox
                             label="Simple"
@@ -18,20 +22,18 @@ class FormItem extends Component {
                             disabled="true"
                         />))
                     }
-                </CardText>)
+                </div>)
         }
         return (<span></span>);
     }
     render() {
         return (
-            <div className="App" onClick={(e) => this.goToForm(this.props.item.formUrl)}>
-                <Card>
-                    <CardMedia>
-                        <img src={this.props.item.imageSrc} alt="" />
-                    </CardMedia>
-                    <CardTitle title={this.props.item.title} />
+            <div onClick={(e) => this.goToForm(this.props.item.formUrl)}>
+                <Paper>
+                    <img src={this.props.item.imageSrc} alt="" />
+                    <h3> {this.props.item.title} </h3>
                     {this.createAdditionalInfo()}
-                </Card>
+                </Paper>
             </div>
         );
     }

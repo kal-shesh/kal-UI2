@@ -29,6 +29,7 @@ class HomePage extends Component {
         return (
             <MuiThemeProvider>
                 <div>
+
                     <SearchBar formsNames={this.state.filtersForms.map((item) => item.title)} updateParentList={(val)=>this.updateParentList(val)}/>
                     <FormsList forms={this.state.filtersForms}/>
                 </div>

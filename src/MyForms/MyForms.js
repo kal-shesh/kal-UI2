@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import SearchBar from '../HomePage/SearchBar';
 import FormsList from '../HomePage/FormsList';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-//import './App.css';
+import Col from 'react-bootstrap/lib/Col';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
 
 class MyForms extends Component {
     constructor(){
@@ -11,9 +13,10 @@ class MyForms extends Component {
         var forms = [
             {
                 title:'title1',
-                imageSrc :'',
+                imageSrc :'/hol.png',
                 formUrl :'',
                 creationDate : new Date(),
+                updateDate : new Date(),
                 approves:[
                     {
                         isApproved:true,
@@ -41,9 +44,14 @@ class MyForms extends Component {
             <MuiThemeProvider>
 
                 <div>
-                    MyForms
-                    <SearchBar formsNames={this.state.filtersForms.map((item) => item.title)} updateParentList={(val)=>this.updateParentList(val)}/>
-                    <FormsList forms={this.state.filtersForms}/>
+                    <Grid>
+                        <Row>
+                            <SearchBar formsNames={this.state.filtersForms.map((item) => item.title)} updateParentList={(val)=>this.updateParentList(val)}/>
+                        </Row>
+                        <Row>
+                            <FormsList forms={this.state.filtersForms}/>
+                        </Row>
+                    </Grid>
                 </div>
             </MuiThemeProvider>
         );
