@@ -17,6 +17,24 @@ class FetchClass {
             console.error(err);
         });
     }
+
+    submitForms(formId, model, userId, callback) {
+        fetch('http://1.1.1.18/5000/forms/active/$userId'.replace('$userId', userId), {
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+            body: {
+                id: formId,
+                data: model
+            }
+        }).then(function (response) {
+            return response.json()
+        }).then(function (data) {
+            callback(data)
+        });
+    }
     getMyForms(userId,callback) {
         fetch('http://1.1.1.18:5000/forms/active/my/user_id='+userId).then(function (response) {
             return response.json();

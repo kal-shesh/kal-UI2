@@ -5,28 +5,37 @@ import Paper from 'material-ui/Paper';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import FormSend from 'material-ui/svg-icons/content/send';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
+import FetchClass from "../FetchClass";
+import User from '../User';
+// import _ from 'underscore';
+import utils from "react-schema-form/lib/utils";
+// import FlatButton from 'material-ui/FlatButton';
 
 
 class CreateFormPage extends Component {
+
     constructor() {
         super();
         this.state = {
-            formModel: {}
+            formModel: {},
+            // formObj: {}
         };
     }
 
-    onClickSend(e) {
-        // alert("sent")
+    onClickSend(e, id) {
+        // alert(JSON.stringify(this.state.formModel));
+        const fetchClass = new FetchClass();
+
+        fetchClass.submitForms(id, this.state.formModel, new User().id, (e) => console.log(e))
     }
 
 
     getMockOfTofes() {
         return {
             id: this.guid(),
-            name: this.props.name,
+            displayName: this.props.match.params.name,
             description: "some form description",
-            pdf: "/pdf/path",
+            jpeg: "/pdf/path",
             schema: {
                 "$schema": "http://json-schema.org/draft-04/schema#",
                 "definitions": {},
@@ -37,7 +46,8 @@ class CreateFormPage extends Component {
                         "properties": {
                             "Citizenship": {
                                 "id": "/properties/Soldiers Request/properties/Citizenship",
-                                "type": "string"
+                                "type": "string",
+                                "title": "weoithweoih"
                             },
                             "Corps": {
                                 "id": "/properties/Soldiers Request/properties/Corps",
@@ -128,14 +138,22 @@ class CreateFormPage extends Component {
     }
 
 
+    onModelChangeIt(key, val) {
+        let newFormModel = this.state.formModel;
+        utils.selectOrSet(key, newFormModel, val);
+
+        this.setState({
+            formModel: newFormModel
+        });
+    }
     render() {
         const paperStyle = {
             // padding: "8px",
-            margin: "32px"
+            margin: "32px 600px"
         };
 
         const formDivStyle = {
-            "padding": "8px"
+            "padding": "16px 16px"
         };
 
         const formStyle = {
@@ -146,19 +164,17 @@ class CreateFormPage extends Component {
         };
 
         const mock = this.getMockOfTofes();
-        // console.log(mock);
+
         return (
             <MuiThemeProvider>
                 <Paper style={paperStyle} zDepth={3}>
-                    <AppBar title={mock.name}
-                            iconElementRight={<FlatButton label="save" labelStyle={{"fontSize": "18px"}}/>}
-                            iconElementLeft={<div></div>}/>
+                    <AppBar style={{float: "left"}} title={mock.displayName} iconElementLeft={<div></div>}/>
 
                     <div style={formDivStyle}>
-                        <SchemaForm dir="rtl" style={formStyle} schema={mock.schema} model={this.state.formModel}
-                                    onModelChange={() => console.log("MODELCHANGE")}/>
+                        <SchemaForm style={formStyle} schema={mock.schema} model={this.state.formModel}
+                                    onModelChange={(keys, values) => this.onModelChangeIt(keys, values)}/>
                     </div>
-                    <FloatingActionButton onClick={(e) => this.onClickSend(e)} style={{
+                    <FloatingActionButton onClick={(e) => this.onClickSend(e, mock.id)} style={{
                         "margin": "24px 8px"
                     }}>
                         <FormSend />
@@ -167,7 +183,6 @@ class CreateFormPage extends Component {
             </MuiThemeProvider>
         );
     }
-
 }
 
 export default CreateFormPage;
