@@ -18,7 +18,7 @@ class SearchBar extends Component {
     render() {
         return (
             <div style={{
-                display: 'flex',
+                'display': 'flex',
                 'justify-content': 'center',
                 'align-items': 'center'
             }}>

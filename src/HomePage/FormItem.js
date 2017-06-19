@@ -29,10 +29,15 @@ class FormItem extends Component {
     render() {
         return (
             <div onClick={(e) => this.goToForm(this.props.item.formUrl)}>
-                <Paper>
-                    <img src={this.props.item.imageSrc} alt="" />
-                    <h3> {this.props.item.title} </h3>
-                    {this.createAdditionalInfo()}
+                <Paper zDepth={3}>
+                    <div style={{ 'background-color': 'rgb(61, 187, 229)'}}>
+                        <img src={this.props.item.jpeg} alt="" width='100%' />
+                        <div style={{'margin-left': '1em'}}>
+                            <h2> {this.props.item.displayName} </h2>
+                            <h3> {this.props.item.description}</h3>
+                            {this.createAdditionalInfo()}
+                        </div>
+                    </div>
                 </Paper>
             </div>
         );

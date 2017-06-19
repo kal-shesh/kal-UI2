@@ -5,16 +5,6 @@ import Row from 'react-bootstrap/lib/Row';
 
 import FormItem from './FormItem';
 //import './App.css';
-const styles = {
-    root: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-    },
-    gridList: {
-        overflowY: 'auto',
-    }
-};
 
 class FormsList extends Component {
     render() {
@@ -25,7 +15,7 @@ class FormsList extends Component {
                     {
                         this.props.forms.map((form)=><Col md={4}
                             >
-                            <FormItem item={form}/>
+                            <FormItem  item={form}/>
                         </Col>)
                     }
                     </Row>

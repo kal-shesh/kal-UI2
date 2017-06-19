@@ -10,7 +10,9 @@ class SheshHeader extends Component {
     render() {
         return (
         <MuiThemeProvider>
-            <AppBar title="Form-Me" />
+            <AppBar title="Form-Me" >
+
+            </AppBar>
         </MuiThemeProvider>
         )
     }
