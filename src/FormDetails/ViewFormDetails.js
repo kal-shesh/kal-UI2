@@ -6,14 +6,19 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import FormSend from 'material-ui/svg-icons/content/send';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
+import {Tabs, Tab} from 'material-ui/Tabs';
+import StepDisplay from './StepDisplay';
+import injectTapEventPlugin from "react-tap-event-plugin";
 
 
 class ViewFormDetails extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            formModel: this.getFormDetials(props.match.params.id)
+            formModel: this.getFormDetials(props.match.params.id).data,
+            steps:this.getFormDetials(props.match.params.id).metadata.steps
         };
+        injectTapEventPlugin()
     }
 
     onClickSend(e) {
@@ -128,24 +133,43 @@ class ViewFormDetails extends Component {
 
     getFormDetials(id){
         return {
-            "Citizenship":"Citizenship",
-            "Corps":"Corps",
-            "DOB" :"DOB",
-            "Main Profession Type" : "Main Profession Type",
-            "Family Name":"Family Name",
-            "Family Status" : "Family Status",
-            "Rank" : "Rank",
-            "First Name" : "First Name",
-            "Job" : "Job",
-            "Is Perminent" : "Is Perminent",
-            "Medical Profile set date" : "Medical Profile set date",
-            "Main Profession" : "Main Profession",
-            "Permanent Service Start" : "Permanent Service Start",
-            "education" : "education",
-            "Main Profession Num"  : 1,
-            "ID" : 1,
-            "Unit" : "Unit",
-            "Medical Profile" : 82,
+            "data": {
+                "Soldiers Request": {
+                    "ID": 8161702,
+                    "Rank": "SLT",
+                    "Family Name": "Schreiber",
+                    "First Name": "Daniel",
+                    "Corps": "Daniel",
+                    "Unit": "Daniel",
+                    "Citizenship": "Daniel",
+                    "Family Status": "S",
+                    "DOB": "01/08/1996",
+                    "education": "non",
+                    "Medical Profile": 64,
+                    "Is Perminent": true,
+                    "Medical Profile set date": "04/02/2015",
+                    "Job": "Programer",
+                    "Main Profession": "Officer",
+                    "Main Profession Num": 1,
+                    "Main Profession Type": "Cyber",
+                    "Permanent Service Start": "03/02/2018"
+                }},
+            "metadata": {
+                "steps": [{"step_id": "ddffd", "aprrover": "ssss", "step_name": "ishur rashatz", "status": "approved",
+                    "next_steps": [{"step_id": "ddffdads", "step_name": "ishur rashatz222", "aprrover": "aaassss",
+                        "status": "waiting"}]}]
+            }
+        }
+    }
+    componentDidMount()
+    {
+        console.log('aaaaa');
+        var schema = document.getElementById("SchemaForm");
+        var inputs = schema.getElementsByTagName("input");
+        for (var index in inputs){
+            if (!isNaN(index)){
+                inputs[index].setAttribute("disabled", "true")
+            }
         }
     }
     render() {
@@ -169,21 +193,30 @@ class ViewFormDetails extends Component {
         // console.log(mock);
         return (
             <MuiThemeProvider>
-                <Paper style={paperStyle} zDepth={3}>
-                    <AppBar title={mock.name}
-                            iconElementRight={<FlatButton label="save" labelStyle={{"fontSize": "18px"}}/>}
-                            iconElementLeft={<div></div>}/>
+                <Tabs>
+                    <Tab label="Status">
+                        <StepDisplay steps={this.state.steps}/>
+                    </Tab>
+                    <Tab label="Form">
+                        <Paper style={paperStyle} zDepth={3}>
+                            <AppBar title={mock.name}
+                                    iconElementRight={<FlatButton label="save" labelStyle={{"fontSize": "18px"}}/>}
+                                    iconElementLeft={<div></div>}/>
 
-                    <div style={formDivStyle}>
-                        <SchemaForm dir="rtl" style={formStyle} schema={mock.schema} model={this.state.formModel}
-                                    onModelChange={() => console.log("MODELCHANGE")} formDefaults={this.state.formModel}/>
-                    </div>
-                    <FloatingActionButton onClick={(e) => this.onClickSend(e)} style={{
-                        "margin": "24px 8px"
-                    }}>
-                        <FormSend />
-                    </FloatingActionButton>
-                </Paper>
+                            <div id="SchemaForm" style={formDivStyle}>
+                                <SchemaForm  dir="rtl" style={formStyle} schema={mock.schema} model={this.state.formModel}
+                                             onModelChange={() => console.log("MODELCHANGE")} formDefaults={this.state.formModel}
+                                             refs="myinput"/>
+                            </div>
+                            <FloatingActionButton onClick={(e) => this.onClickSend(e)} style={{
+                                "margin": "24px 8px"
+                            }}>
+                                <FormSend />
+                            </FloatingActionButton>
+                        </Paper>
+                    </Tab>
+                </Tabs>
+
             </MuiThemeProvider>
         );
     }
