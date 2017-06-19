@@ -7,9 +7,12 @@ let instance = null;
 class User {
     constructor() {
         if(!instance){
-            this.id = prompt("What is your ID?");
+            this.id = prompt("What is your ID?", "6666");
+            if (this.id == null) {
+                this.id = "6666";
+            }
             instance = this;
-            alert(instance.id);
+            // alert(instance.id);
         }
 
         return instance;
