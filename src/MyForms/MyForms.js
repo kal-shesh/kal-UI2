@@ -13,6 +13,10 @@ class MyForms extends Component {
         var component = this;
         var fetch = new FetchClass();
         fetch.getMyForms(user,function (data) {
+            data.forms = data.forms.map(function (form) {
+               form.formUrl = '/ViewForm/'+form.uuid;
+                return form;
+            });
             console.info(data);
             component.setState({forms:data.forms,filtersForms:data.forms});
         });
@@ -22,16 +26,15 @@ class MyForms extends Component {
         this.state = {forms:forms,filtersForms:forms};
     }
     updateParentList(value){
-        this.setState({filtersForms:this.state.forms.filter((item)=>item.displayName.indexOf(value) != -1)});
+        this.setState({filtersForms:this.state.forms.filter((item)=>item.metadata.displayName.indexOf(value) != -1)});
     }
     render() {
         return (
             <MuiThemeProvider>
-
                 <div>
                     <Grid>
                         <Row>
-                            <SearchBar formsNames={this.state.filtersForms.map((item) => item.displayName)} updateParentList={(val)=>this.updateParentList(val)}/>
+                            <SearchBar formsNames={this.state.filtersForms.map((item) => item.metadata.displayName)} updateParentList={(val)=>this.updateParentList(val)}/>
                         </Row>
                         <Row>
                             <FormsList forms={this.state.filtersForms}/>
