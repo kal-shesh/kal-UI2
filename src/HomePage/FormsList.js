@@ -9,7 +9,7 @@ class FormsList extends Component {
             <div>
                 <List>
                     {
-                        this.props.forms.map((form)=><ListItem ><FormItem title={form.title} formUrl={form.formUrl} imageSrc={form.imageSrc}/></ListItem>)
+                        this.props.forms.map((form)=><ListItem ><FormItem item={form}/></ListItem>)
                     }
                 </List>
             </div>

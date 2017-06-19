@@ -8,13 +8,14 @@ class FormItem extends Component {
         console.log(url);
     }
     createAdditionalInfo(){
-        if (this.props.creationDate != undefined){
+        if (this.props.item.creationDate != undefined){
             return (
-                <CardText expandable={true}>
+                <CardText>
                     {
-                        this.props.approves.map((approve) => ( <Checkbox
+                        this.props.item.approves.map((approve) => ( <Checkbox
                             label="Simple"
                             checked={approve.isApproved}
+                            disabled="true"
                         />))
                     }
                 </CardText>)
@@ -23,12 +24,12 @@ class FormItem extends Component {
     }
     render() {
         return (
-            <div className="App" onClick={(e) => this.goToForm(this.props.formUrl)}>
+            <div className="App" onClick={(e) => this.goToForm(this.props.item.formUrl)}>
                 <Card>
                     <CardMedia>
-                        <img src={this.props.imageSrc} alt="" />
+                        <img src={this.props.item.imageSrc} alt="" />
                     </CardMedia>
-                    <CardTitle title={this.props.title} />
+                    <CardTitle title={this.props.item.title} />
                     {this.createAdditionalInfo()}
                 </Card>
             </div>
