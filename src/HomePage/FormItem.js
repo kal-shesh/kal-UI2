@@ -4,11 +4,11 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 
 class FormItem extends Component {
     goToForm(url){
-
+        console.log(url);
     }
     render() {
         return (
-            <div className="App" onclick={(e) => this.goToForm(this.props.formUrl)}>
+            <div className="App" onClick={(e) => this.goToForm(this.props.formUrl)}>
                 <Card>
                     <CardMedia>
                         <img src={this.props.imageSrc} alt="" />

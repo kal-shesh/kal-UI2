@@ -3,25 +3,27 @@ import AutoComplete from 'material-ui/AutoComplete';
 //import './App.css';
 
 class SearchBar extends Component {
-    constructor(){
-        super();
-        this.state = {forms:['form1','form2','form3']}
+    constructor(props){
+        super(props);
+        this.state = {dataSource:props.formsNames}
     }
-    handleUpdateInput = (value) => {
+    handleUpdateInput = (value,propObject) => {
         this.setState({
-            dataSource: [
-                this.state.forms.filter()
-            ],
+            dataSource:
+                propObject.formsNames.filter((item) => item.indexOf(value) != -1)
+
         });
+        propObject.updateParentList(value);
     };
     render() {
         return (
-            <div className="App">
+            <div >
                 <AutoComplete
-                    hintText="Type anything"
+                    hintText="Search"
                     dataSource={this.state.dataSource}
-                    onUpdateInput={this.handleUpdateInput}
+                    onUpdateInput={(e)=>this.handleUpdateInput(e,this.props)}
                 />
+
             </div>
         );
     }
