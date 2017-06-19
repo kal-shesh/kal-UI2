@@ -2,10 +2,8 @@ import React, {Component} from 'react';
 import {SchemaForm} from 'react-schema-form';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
-import FormSend from 'material-ui/svg-icons/content/send';
 import AppBar from 'material-ui/AppBar';
-import FlatButton from 'material-ui/FlatButton';
+import FetchClass from '../FetchClass';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import StepDisplay from './StepDisplay';
 import injectTapEventPlugin from "react-tap-event-plugin";
@@ -14,9 +12,13 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 class ViewFormDetails extends Component {
     constructor(props) {
         super(props);
+        var component = this;
+        var fetch = new FetchClass();
+        fetch.getForms((data)=> component.setState({forms: data.forms.data, filtersForms: data.forms.metadata}));
+
         this.state = {
-            formModel: this.getFormDetials(props.match.params.id).data,
-            steps:this.getFormDetials(props.match.params.id).metadata.steps
+            formModel: {},
+            steps:{}
         };
         injectTapEventPlugin()
     }
@@ -131,36 +133,6 @@ class ViewFormDetails extends Component {
             s4() + '-' + s4() + s4() + s4();
     }
 
-    getFormDetials(id){
-        return {
-            "data": {
-                "Soldiers Request": {
-                    "ID": 8161702,
-                    "Rank": "SLT",
-                    "Family Name": "Schreiber",
-                    "First Name": "Daniel",
-                    "Corps": "Daniel",
-                    "Unit": "Daniel",
-                    "Citizenship": "Daniel",
-                    "Family Status": "S",
-                    "DOB": "01/08/1996",
-                    "education": "non",
-                    "Medical Profile": 64,
-                    "Is Perminent": true,
-                    "Medical Profile set date": "04/02/2015",
-                    "Job": "Programer",
-                    "Main Profession": "Officer",
-                    "Main Profession Num": 1,
-                    "Main Profession Type": "Cyber",
-                    "Permanent Service Start": "03/02/2018"
-                }},
-            "metadata": {
-                "steps": [{"step_id": "ddffd", "aprrover": "ssss", "step_name": "ishur rashatz", "status": "approved",
-                    "next_steps": [{"step_id": "ddffdads", "step_name": "ishur rashatz222", "aprrover": "aaassss",
-                        "status": "waiting"}]}]
-            }
-        }
-    }
     componentDidMount()
     {
         console.log('aaaaa');
@@ -200,19 +172,14 @@ class ViewFormDetails extends Component {
                     <Tab label="Form">
                         <Paper style={paperStyle} zDepth={3}>
                             <AppBar title={mock.name}
-                                    iconElementRight={<FlatButton label="save" labelStyle={{"fontSize": "18px"}}/>}
-                                    iconElementLeft={<div></div>}/>
+                                    />
 
                             <div id="SchemaForm" style={formDivStyle}>
                                 <SchemaForm  dir="rtl" style={formStyle} schema={mock.schema} model={this.state.formModel}
                                              onModelChange={() => console.log("MODELCHANGE")} formDefaults={this.state.formModel}
                                              refs="myinput"/>
                             </div>
-                            <FloatingActionButton onClick={(e) => this.onClickSend(e)} style={{
-                                "margin": "24px 8px"
-                            }}>
-                                <FormSend />
-                            </FloatingActionButton>
+
                         </Paper>
                     </Tab>
                 </Tabs>

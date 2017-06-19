@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cf0dd95-3a6b-4b6f-adce-9a1666fb27f9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/FormDetails/StepDisplay.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FetchClass.js" afterPath="$PROJECT_DIR$/src/FetchClass.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js" afterPath="$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomePage/FormItem.js" afterPath="$PROJECT_DIR$/src/HomePage/FormItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyForms/MyForms.js" afterPath="$PROJECT_DIR$/src/MyForms/MyForms.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,46 +24,42 @@
       <file leaf-file-name="ViewFormDetails.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="n#!!block;n#onClickSend#0;n#ViewFormDetails#0" expanded="false" />
-                <element signature="e#1124#5556#0" expanded="false" />
-                <element signature="e#1719#1886#0" expanded="false" />
-                <element signature="e#1923#2088#0" expanded="false" />
-                <element signature="e#2133#2306#0" expanded="false" />
-                <element signature="e#2353#2528#0" expanded="false" />
-                <element signature="e#2572#2744#0" expanded="false" />
-                <element signature="e#2780#2945#0" expanded="false" />
-                <element signature="e#2991#3166#0" expanded="false" />
-                <element signature="e#3203#3368#0" expanded="false" />
-                <element signature="e#3417#3594#0" expanded="false" />
-                <element signature="e#3647#3829#0" expanded="false" />
-                <element signature="n#!!block;n#guid#0;n#ViewFormDetails#0" expanded="false" />
-                <element signature="n#!!block;n#getFormDetials#0;n#ViewFormDetails#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StepDisplay.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/FormDetails/StepDisplay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyForms.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MyForms.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MyForms/MyForms.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="41" column="58" lean-forward="false" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+            <state relative-caret-position="230">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FetchClass.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FetchClass.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!doc;n#FetchClass#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomePage.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HomePage/HomePage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,17 +101,17 @@
         <option value="$PROJECT_DIR$/src/HomePage/HomePage.css" />
         <option value="$PROJECT_DIR$/src/SheshHeader.js" />
         <option value="$PROJECT_DIR$/src/HomePage/HomePage.js" />
-        <option value="$PROJECT_DIR$/src/FetchClass.js" />
         <option value="$PROJECT_DIR$/src/HomePage/SearchBar.js" />
-        <option value="$PROJECT_DIR$/src/HomePage/FormItem.js" />
         <option value="$PROJECT_DIR$/src/HomePage/FormsList.js" />
-        <option value="$PROJECT_DIR$/src/MyForms/MyForms.js" />
         <option value="$PROJECT_DIR$/src/FormStatus.js" />
         <option value="$PROJECT_DIR$/src/FormDetails/FormDetail.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/CreateFormPage/CreateFormPage.js" />
         <option value="$PROJECT_DIR$/src/FormDetails/StepDisplay.js" />
+        <option value="$PROJECT_DIR$/src/HomePage/FormItem.js" />
+        <option value="$PROJECT_DIR$/src/FetchClass.js" />
         <option value="$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js" />
+        <option value="$PROJECT_DIR$/src/MyForms/MyForms.js" />
       </list>
     </option>
   </component>
@@ -178,6 +175,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyForms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HomePage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kal-ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FormDetails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,7 +463,7 @@
       <updated>1497855783887</updated>
       <workItem from="1497855787883" duration="390000" />
       <workItem from="1497857793591" duration="1376000" />
-      <workItem from="1497859781183" duration="36135000" />
+      <workItem from="1497859781183" duration="38190000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1497860475179</created>
@@ -463,11 +514,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497886901575</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="did more stuff">
+      <created>1497897403959</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1497897403959</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37901000" />
+    <option name="totallyTimeSpent" value="39956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -506,7 +564,8 @@
     <MESSAGE value="need css" />
     <MESSAGE value="jdjsjs" />
     <MESSAGE value="kaki" />
-    <option name="LAST_COMMIT_MESSAGE" value="kaki" />
+    <MESSAGE value="did more stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="did more stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -519,9 +578,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="10" column="22" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -644,42 +701,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FetchClass.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="26" lean-forward="false" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-          <folding>
-            <element signature="n#!!doc;n#FetchClass#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomePage/HomePage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="17" lean-forward="true" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HomePage/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="22" column="39" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HomePage/FormItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="34" column="57" lean-forward="false" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -715,30 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#onClickSend#0;n#ViewFormDetails#0" expanded="false" />
-            <element signature="e#1124#5556#0" expanded="false" />
-            <element signature="e#1719#1886#0" expanded="false" />
-            <element signature="e#1923#2088#0" expanded="false" />
-            <element signature="e#2133#2306#0" expanded="false" />
-            <element signature="e#2353#2528#0" expanded="false" />
-            <element signature="e#2572#2744#0" expanded="false" />
-            <element signature="e#2780#2945#0" expanded="false" />
-            <element signature="e#2991#3166#0" expanded="false" />
-            <element signature="e#3203#3368#0" expanded="false" />
-            <element signature="e#3417#3594#0" expanded="false" />
-            <element signature="e#3647#3829#0" expanded="false" />
-            <element signature="n#!!block;n#guid#0;n#ViewFormDetails#0" expanded="false" />
-            <element signature="n#!!block;n#getFormDetials#0;n#ViewFormDetails#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -749,10 +752,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MyForms/MyForms.js">
+    <entry file="file://$PROJECT_DIR$/src/HomePage/FormItem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="41" column="58" lean-forward="false" selection-start-line="41" selection-start-column="58" selection-end-line="41" selection-end-column="58" />
+        <state relative-caret-position="172">
+          <caret line="16" column="91" lean-forward="false" selection-start-line="16" selection-start-column="91" selection-end-line="16" selection-end-column="91" />
           <folding />
         </state>
       </provider>
@@ -764,6 +767,42 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HomePage/HomePage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FetchClass.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!doc;n#FetchClass#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyForms/MyForms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

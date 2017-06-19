@@ -15,13 +15,6 @@ class FormItem extends Component {
                 <div>
                     <div>Creation Date :{this.props.item.creationDate.toDateString()}</div>
                     <div>Last update date:{this.props.item.updateDate.toDateString()}</div>
-                    {
-                        this.props.item.approves.map((approve) => ( <Checkbox
-                            label="Simple"
-                            checked={approve.isApproved}
-                            disabled="true"
-                        />))
-                    }
                 </div>)
         }
         return (<span></span>);

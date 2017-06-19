@@ -9,7 +9,10 @@ import Row from 'react-bootstrap/lib/Row';
 class MyForms extends Component {
     constructor(){
         super();
-        //this.updateParentList = this.updateParentList.bind(this);
+        var component = this;
+        var fetch = new FetchClass();
+        fetch.getForms((data)=> component.setState({forms:data.forms,filtersForms:data.forms}));
+
         var forms = [
             {
                 "displayName": "tofesHul",
@@ -18,16 +21,6 @@ class MyForms extends Component {
                 "description": "a form to ask premission to hul",
                 creationDate : new Date(),
                 updateDate : new Date(),
-                approves:[
-                    {
-                        isApproved:true,
-                        name:'approve 1'
-                    },
-                    {
-                        isApproved:false,
-                        name:'approve 2'
-                    }
-                ]
             },
             {
                 "displayName": "tofes haarachat keva",
