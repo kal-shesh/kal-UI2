@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cf0dd95-3a6b-4b6f-adce-9a1666fb27f9" name="Default" comment="push">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HomePage/FormItemHome.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/HomePage/FormListHome.js" />
+    <list default="true" id="4cf0dd95-3a6b-4b6f-adce-9a1666fb27f9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js" afterPath="$PROJECT_DIR$/src/FormDetails/ViewFormDetails.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomePage/FormItem.js" afterPath="$PROJECT_DIR$/src/HomePage/FormItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomePage/FormsList.js" afterPath="$PROJECT_DIR$/src/HomePage/FormsList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HomePage/HomePage.js" afterPath="$PROJECT_DIR$/src/HomePage/HomePage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MyForms/MyForms.js" afterPath="$PROJECT_DIR$/src/MyForms/MyForms.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -552,7 +545,7 @@
       <updated>1497855783887</updated>
       <workItem from="1497855787883" duration="390000" />
       <workItem from="1497857793591" duration="1376000" />
-      <workItem from="1497859781183" duration="48665000" />
+      <workItem from="1497859781183" duration="49279000" />
     </task>
     <task id="LOCAL-00001" summary="a">
       <created>1497860475179</created>
@@ -631,11 +624,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497903018821</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="clicks go to forms and display">
+      <created>1497910028790</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1497910028790</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50431000" />
+    <option name="totallyTimeSpent" value="51045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -676,7 +676,8 @@
     <MESSAGE value="kaki" />
     <MESSAGE value="did more stuff" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="clicks go to forms and display" />
+    <option name="LAST_COMMIT_MESSAGE" value="clicks go to forms and display" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
