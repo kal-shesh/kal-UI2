@@ -19,7 +19,7 @@ class App extends Component {
                     <SheshHeader/>
                     <Route path="/Home" component={Homepage}/>
                     <Route path="/MyForms" component={MyForms}/>
-                    <Route path="/CreateForm" component={CreateFormPage} />
+                    <Route path="/CreateForm/:name" component={CreateFormPage} />
                 </div>
             </Router>
         );
