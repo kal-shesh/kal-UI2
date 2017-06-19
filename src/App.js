@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom'
 import CreateFormPage from "./CreateFormPage/CreateFormPage";
 import SheshHeader from "./SheshHeader";
+import ViewFormDetails from './FormDetails/ViewFormDetails';
 
 
 
@@ -20,6 +21,7 @@ class App extends Component {
                     <Route path="/Home" component={Homepage}/>
                     <Route path="/MyForms" component={MyForms}/>
                     <Route path="/CreateForm/:name" component={CreateFormPage} />
+                    <Route path="/ViewForm/:id" component={ViewFormDetails} />
                 </div>
             </Router>
         );
