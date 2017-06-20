@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "json-schema-empty": "^1.1.1",
     "json-schema-faker": "^0.5.0-rc6",
     "material-ui": "^0.18.3",
     "react": "^15.6.1",

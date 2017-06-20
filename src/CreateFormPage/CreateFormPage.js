@@ -10,15 +10,34 @@ import User from "../User";
 import _ from "underscore";
 import utils from "react-schema-form/lib/utils";
 import FlatButton from 'material-ui/FlatButton';
-import jsonSchemaFaker from 'json-schema-faker';
+import empty from 'json-schema-empty';
 
 
-const defaults = {
-    "Soldier Details": {
-        "Personal Info":
-            {
-                "Job" :"AAAA"
-            }
+var defaults = {
+    "Soldiers Details":{
+        "Personal Info":{
+            "Start Of Next Permanent Service":"1988-10-22T02:15:51.298Z",
+            "Citizenship":"sunt eiusmod ea Duis",
+            "Corps":"minim laborum i",
+            "End of Current Commitment":"4890-03-13T00:41:00.890Z",
+            "Permanent Service Start":"4281-02-22T14:36:28.908Z",
+            "Main Profession Type":"ea dese",
+            "Family Name":"occaec",
+            "Family Status":"incididunt ullamco sed ut",
+            "Rank":"Lieutenant",
+            "Rank Before Position":"Corporal",
+            "First Name":"sunt ut elit oc",
+            "Job":"commo",
+            "Is Permanent":true,
+            "Medical Profile set date":"2454-12-21T08:06:40.054Z",
+            "Date Of Birth":"2881-07-20T03:08:29.840Z",
+            "Main Profession":"vel",
+            "education":"quis anim tem",
+            "Main Profession Num":25628665,
+            "ID":4408783,
+            "Unit":"cupidatat nul",
+            "Medical Profile":53521427
+        }
 
     }
 };
@@ -55,9 +74,25 @@ class CreateFormPage extends Component {
     getSchemaFromServer() {
         const fetcher = new FetchClass();
         // const updateState = this.setState;
-        fetcher.getFormType("extendService", (data) => this.setState({
-            formData: data
-        }));
+        var comp = this;
+        fetcher.getFormType("extendService", function(data){
+            let emptyDef = empty(data.schema);
+            fetcher.getUserData(new User().id,function (user) {
+                emptyDef["Soldiers Details"]["Personal Info"].Job = user.Job;
+                emptyDef["Soldiers Details"]["Personal Info"].ID = parseInt(user.ID);
+                emptyDef["Soldiers Details"]["Personal Info"]["First Name"] = user["First Name"];
+                emptyDef["Soldiers Details"]["Personal Info"]["Family Name"] = user["Last Name"];
+                emptyDef["Soldiers Details"]["Personal Info"]["Date Of Birth"] = user["Date Of Birth"];
+                emptyDef["Soldiers Details"]["Personal Info"]["Personal Number"]= user["Personal Number"];
+                emptyDef["Soldiers Details"]["Personal Info"]["Rank"]= user.Rank;
+                comp.setState({
+                    formData: data,
+                    formModel: emptyDef
+                })
+
+            });
+
+        });
     }
 
 
@@ -101,21 +136,10 @@ class CreateFormPage extends Component {
 
             fetcher.getUserData(userId, (data) => userData = data);
 
-            let defaults = {
-                "Soldier Details": {
-                    "Personal Info":
-                        userData
-
-                }
-            };
-
-      //      this.state['formModel'] = defaults;
-
-
             const schemaForm = (
             <SchemaForm  dir="rtl" style={formStyle} schema={this.state.formData.schema} model={this.state.formModel}
-                         onModelChange={(keys, values) => this.onModelChangeIt(keys, values)} formDefaults={defaults}
-                         refs="myinput"/>)
+                         onModelChange={(keys, values) => this.onModelChangeIt(keys, values)}
+                         refs="myinput"/>);
 
 
             return schemaForm;
