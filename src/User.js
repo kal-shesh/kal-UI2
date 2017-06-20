@@ -9,7 +9,7 @@ class User {
         if(!instance){
             //this.id = prompt("What is your ID?", "6666");
             if (this.id == null) {
-                this.id = "3724712";
+                this.id = "372471238";
             }
             instance = this;
             // alert(instance.id);
