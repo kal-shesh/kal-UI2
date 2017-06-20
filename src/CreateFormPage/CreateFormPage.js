@@ -63,11 +63,17 @@ class CreateFormPage extends Component {
         // alert(JSON.stringify(this.state.formModel));
         const fetchClass = new FetchClass();
 
-        fetchClass.submitForms(id, this.state.formModel, new User().id, (e) => console.log(e))
+        fetchClass.submitForms(id, this.state.formModel, new User().id, (e) => this.success(e))
+
     }
 
     successfulSend() {
 
+    }
+
+    success(e) {
+        console.log(e);
+        window.location.replace("http://localhost:3000/Home");
     }
 
 
@@ -164,8 +170,7 @@ class CreateFormPage extends Component {
                     <AppBar style={{float: "left"}}
                             title={this.state.formData.displayName}
                             iconElementLeft={<div></div>}
-                            iconElementRight={<div><FlatButton label="Auto Fill" onClick={(e) => console.log(e)}/>
-                            </div>}/>
+                            iconElementRight={<div></div>}/>
                     <div style={formDivStyle}>
                         {this.getSchemaObject()}
                     </div>

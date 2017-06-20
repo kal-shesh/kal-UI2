@@ -30,10 +30,10 @@ class FetchClass {
                 data: model
             })
         }).then(function (response) {
-            return response.json()
-        }).then(function (data) {
-            callback(data)
-        });
+            callback(response);
+        }).catch(function (err) {
+            console.error(err);
+        })
     }
     getMyForms(userId,callback) {
         fetch('http://1.1.1.18:5000/forms/active/my/user_id='+userId).then(function (response) {

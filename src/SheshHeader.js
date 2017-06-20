@@ -33,9 +33,6 @@ class SheshHeader extends Component {
                         <Link style={linkStyle} to="/Home">Home</Link>
                         <Link style={linkStyle} to="/MyForms">MyForms</Link>
                         <Link style={linkStyle} to="/Waiting">Waiting</Link>
-                        <IconButton>
-                            <ActionHome/>
-                        </IconButton>
                     </ToolbarGroup>
                 </Toolbar>
                 {/*<AppBar title="Form-Me" iconElementRight={<FlatButton label="Save" />}>*/}

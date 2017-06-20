@@ -16,8 +16,8 @@ class ViewFormDetails extends Component {
         var fetch = new FetchClass();
         fetch.getFormDetials(props.match.params.id,function(data){
             console.info(data);
-            component.setState({formModel: data.data, steps : data.metadata.steps});
-             fetch.getFormType(data.metadata.form_type,function(data1){
+            component.setState({formModel: data.data, steps : data.metadata.next_steps,pdfId:data.uuid});
+             fetch.getFormType(data.metadata.id,function(data1){
                  console.info(data1);
                  component.setState({mock : data1})
              });
@@ -26,6 +26,7 @@ class ViewFormDetails extends Component {
         this.state = {
             formModel: {},
             steps:[],
+            pdfId:1,
             mock : undefined//this.getMockOfTofes()
         };
         injectTapEventPlugin()
@@ -91,7 +92,7 @@ class ViewFormDetails extends Component {
                 <Paper style={{'margin-top': '1em','margin-left': '1em','margin-right': '1em'}} zDepth={2}>
                 <Tabs >
                     <Tab label="PDF">
-                        <PDFViewer pdfPath="/a.pdf"></PDFViewer>
+                        <PDFViewer pdfPath={'http://1.1.1.18:5000/pdf/'+this.state.pdfId}></PDFViewer>
                     </Tab>
                     <Tab label="Form">
                         <Paper style={paperStyle} zDepth={3}>

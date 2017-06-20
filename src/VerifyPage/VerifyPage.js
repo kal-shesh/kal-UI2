@@ -65,7 +65,7 @@ class VerifyPage extends Component {
             return <div></div>;
         }
         console.log(JSON.stringify(waitingForms));
-        return waitingForms['forms'].map((item) => (
+        return <waitingForms></waitingForms>.map((item) => (
             <TableRow>
                 <TableRowColumn>{item.metadata.displayName}</TableRowColumn>
                 <TableRowColumn>{item.metadata['creator_id']}</TableRowColumn>

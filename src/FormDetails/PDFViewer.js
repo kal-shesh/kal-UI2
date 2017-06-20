@@ -44,6 +44,8 @@ class PDFViewer extends Component {
                 <Row>
                     <Col md="3" mdOffset="3">{previousButton}</Col>
                     <Col md="3" mdOffset="3">{nextButton}</Col>
+                    <Col md="3" mdOffset="3"><a href={this.props.pdfPath} download>
+                        download</a></Col>
                 </Row>
             </nav>
         );

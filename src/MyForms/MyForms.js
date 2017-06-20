@@ -13,12 +13,12 @@ class MyForms extends Component {
         var component = this;
         var fetch = new FetchClass();
         fetch.getMyForms(new User().id,function (data) {
-            data.forms = data.forms.map(function (form) {
+            data = data.map(function (form) {
                form.formUrl = '/ViewForm/'+form.uuid;
                 return form;
             });
             console.info(data);
-            component.setState({forms:data.forms,filtersForms:data.forms});
+            component.setState({forms:data,filtersForms:data});
         });
         var forms = [
 
