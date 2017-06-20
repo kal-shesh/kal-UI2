@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PDF from 'react-pdf-js';
+import Grid from 'react-bootstrap/lib/Grid';
+import Row from 'react-bootstrap/lib/Row';
+import Col from 'react-bootstrap/lib/Col';
 
 class PDFViewer extends Component {
     constructor(props) {
@@ -28,20 +31,20 @@ class PDFViewer extends Component {
     }
 
     renderPagination(page, pages) {
-        let previousButton = <li className="previous" onClick={this.handlePrevious}><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+        let previousButton = <div className="previous" onClick={this.handlePrevious}><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></div>;
         if (page === 1) {
-            previousButton = <li className="previous disabled"><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+            previousButton = <div className="previous disabled"><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></div>;
         }
-        let nextButton = <li className="next" onClick={this.handleNext}><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+        let nextButton = <div className="next" onClick={this.handleNext}><a href="#">Next <i className="fa fa-arrow-right"></i></a></div>;
         if (page === pages) {
-            nextButton = <li className="next disabled"><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+            nextButton = <div className="next disabled"><a href="#">Next <i className="fa fa-arrow-right"></i></a></div>;
         }
         return (
             <nav>
-                <ul className="pager">
-                    {previousButton}
-                    {nextButton}
-                </ul>
+                <Row>
+                    <Col md="3" mdOffset="3">{previousButton}</Col>
+                    <Col md="3" mdOffset="3">{nextButton}</Col>
+                </Row>
             </nav>
         );
     }
@@ -52,8 +55,18 @@ class PDFViewer extends Component {
           }
         return (
             <div>
-                <PDF file={this.props.pdfPath} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page}  />
-                {pagination}
+                <Grid>
+                    <Row>
+                        <Col md="3" mdOffset="3">
+                            <PDF file={this.props.pdfPath} onDocumentComplete={this.onDocumentComplete} onPageComplete={this.onPageComplete} page={this.state.page}  />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md>
+                            {pagination}
+                        </Col>
+                    </Row>
+                </Grid>
             </div>);
         }
 
