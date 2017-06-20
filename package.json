@@ -9,6 +9,7 @@
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.6.1",
+    "react-pdf-js": "^1.0.35",
     "react-router": "^4.1.1",
     "react-router-dom": "^4.1.1",
     "react-schema-form": "^0.3.5",

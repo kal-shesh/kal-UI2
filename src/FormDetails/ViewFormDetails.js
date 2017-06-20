@@ -7,7 +7,7 @@ import FetchClass from '../FetchClass';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import StepDisplay from './StepDisplay';
 import injectTapEventPlugin from "react-tap-event-plugin";
-
+import PDFViewer from  './PDFViewer';
 
 class ViewFormDetails extends Component {
     constructor(props) {
@@ -91,6 +91,9 @@ class ViewFormDetails extends Component {
             <MuiThemeProvider>
                 <Paper style={{'margin-top': '1em','margin-left': '1em','margin-right': '1em'}} zDepth={2}>
                 <Tabs >
+                    <Tab label="PDF">
+                        <PDFViewer pdfPath="/a.pdf"></PDFViewer>
+                    </Tab>
                     <Tab label="Form">
                         <Paper style={paperStyle} zDepth={3}>
 
