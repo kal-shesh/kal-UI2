@@ -25,10 +25,10 @@ class FetchClass {
                 'Content-Type': 'application/json'
             },
 
-            body: {
+            body: JSON.stringify({
                 id: formId,
                 data: model
-            }
+            })
         }).then(function (response) {
             return response.json()
         }).then(function (data) {
