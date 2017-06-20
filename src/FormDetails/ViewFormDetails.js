@@ -37,7 +37,6 @@ class ViewFormDetails extends Component {
 
     componentDidUpdate()
     {
-        console.log('aaaaa');
         try
         {
             var schema = document.getElementById("SchemaForm");

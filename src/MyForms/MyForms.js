@@ -5,14 +5,14 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import FetchClass from '../FetchClass';
+import User from '../User';
 
 class MyForms extends Component {
     constructor(){
         super();
-        var user = 'aa';
         var component = this;
         var fetch = new FetchClass();
-        fetch.getMyForms(user,function (data) {
+        fetch.getMyForms(new User().id,function (data) {
             data.forms = data.forms.map(function (form) {
                form.formUrl = '/ViewForm/'+form.uuid;
                 return form;

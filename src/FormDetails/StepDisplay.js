@@ -22,13 +22,36 @@ class StepDisplay extends Component {
             treeData : convertToTree(props.steps)
         }
     }
+    componentDidUpdate()
+    {
+        try
+        {
+            var schema = document.getElementById("Tree");
+            var elements = schema.getElementsByClassName("rst__rowContents");
+            for (var index in elements){
+                if (elements[index].getElementsByClassName("rst__rowSubtitle")[0].innerHTML == 'approved'){
+                    elements[index].className = 'rst__rowContents green'
+                }
+                if (elements[index].getElementsByClassName("rst__rowSubtitle")[0].innerHTML == 'rejected'){
+                    elements[index].className = 'rst__rowContents red'
+                }
+                if (elements[index].getElementsByClassName("rst__rowSubtitle")[0].innerHTML == 'waiting'){
+                    elements[index].className = 'rst__rowContents orange'
+                }
+            }
+        }
+        catch (e){
+            console.error(e);
+        }
+    }
 
     render() {
         return (
-            <div style={{ height: 400 }}>
+            <div style={{ height: 400 }} id="Tree">
                 <SortableTree
                     treeData={convertToTree(this.props.steps)}
                     refs="tree"
+                    canDrag={false} canDrop={false}
                 />
             </div>
         );
