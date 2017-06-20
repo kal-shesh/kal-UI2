@@ -76,6 +76,16 @@ class FetchClass {
             console.error(err);
         });
     }
+    getNeedAprrove(id, callback) {
+        fetch('http://1.1.0.142:5000/forms/active/waiting/'+id).then(function (response) {
+            return response.json();
+        }).then(function (data) {
+            callback(data);
+        }).catch(function (err) {
+            // Error :(
+            console.error(err);
+        });
+    }
 }
 
 export default FetchClass;

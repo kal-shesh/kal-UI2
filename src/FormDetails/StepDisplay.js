@@ -28,7 +28,7 @@ class StepDisplay extends Component {
             <div style={{ height: 400 }}>
                 <SortableTree
                     treeData={convertToTree(this.props.steps)}
-
+                    refs="tree"
                 />
             </div>
         );
