@@ -13,11 +13,11 @@ class HomePage extends Component {
 
         var fetch = new FetchClass();
         fetch.getForms(function(data){
-            data.forms = data.forms.map(function (item) {
+            data = data.map(function (item) {
                item.formUrl = '/createform/'+item.id;
                return item;
             });
-            component.setState({forms: data.forms, filtersForms: data.forms})
+            component.setState({forms: data, filtersForms: data})
         });
 
         var forms = [

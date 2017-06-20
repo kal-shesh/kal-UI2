@@ -43,8 +43,8 @@ var defaults = {
 };
 class CreateFormPage extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             formModel: defaults,
@@ -75,7 +75,7 @@ class CreateFormPage extends Component {
         const fetcher = new FetchClass();
         // const updateState = this.setState;
         var comp = this;
-        fetcher.getFormType("extendService", function(data){
+        fetcher.getFormType(this.props.match.params.name, function(data){
             let emptyDef = empty(data.schema);
             fetcher.getUserData(new User().id,function (user) {
                 emptyDef["Soldiers Details"]["Personal Info"].Job = user.Job;
@@ -141,7 +141,7 @@ class CreateFormPage extends Component {
                          onModelChange={(keys, values) => this.onModelChangeIt(keys, values)}
                          refs="myinput"/>);
 
-
+            //LEVI GEY
             return schemaForm;
         }
     }

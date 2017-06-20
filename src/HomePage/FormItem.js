@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Paper from 'material-ui/Paper';
 import {
     withRouter
-} from 'react-router-dom'
-
+} from 'react-router-dom';
+import Divider from 'material-ui/Divider'
+import Subheader from 'material-ui/Subheader';
 
 //import './App.css';
 
@@ -25,11 +26,12 @@ class FormItem extends Component {
         return (
             <div onClick={(e) => this.goToForm(this.props.item.formUrl)}>
                 <Paper zDepth={3}>
-                    <div style={{ 'background-color': 'rgb(61, 187, 229)'}}>
+                    <div>
                         <img src={this.props.item.metadata.jpeg} alt="" width='100%' />
-                        <div style={{'margin-left': '1em'}}>
-                            <h2> {this.props.item.metadata.displayName} </h2>
-                            <h3> {this.props.item.metadata.description}</h3>
+                        <div style={{marginLeft: '1em'}}>
+                            <h2> {this.props.item.metadata.displayName}</h2>
+                            <Divider/>
+                            <Subheader>{this.props.item.metadata.description}</Subheader>
                             {this.createAdditionalInfo()}
                         </div>
                     </div>

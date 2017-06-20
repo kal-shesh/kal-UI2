@@ -8,7 +8,7 @@ class FetchClass {
     }
 
     getForms(callback) {
-        fetch('http://1.1.0.142:5000/forms').then(function (response) {
+        fetch('http://1.1.1.18:5000/forms').then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -19,7 +19,7 @@ class FetchClass {
     }
 
     submitForms(formId, model, userId, callback) {
-        fetch('http://1.1.0.142:5000/forms/active/$userId'.replace('$userId', userId), {
+        fetch('http://1.1.1.18:5000/forms/active/$userId'.replace('$userId', userId), {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ class FetchClass {
         });
     }
     getMyForms(userId,callback) {
-        fetch('http://1.1.0.142:5000/forms/active/my/user_id='+userId).then(function (response) {
+        fetch('http://1.1.1.18:5000/forms/active/my/user_id='+userId).then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -46,7 +46,7 @@ class FetchClass {
         });
     }
     getFormType(id,callback){
-        fetch('http://1.1.0.142:5000/forms/'+id).then(function (response) {
+        fetch('http://1.1.1.18:5000/forms/'+id).then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -56,7 +56,7 @@ class FetchClass {
         });
     }
     getFormDetials(id,callback){
-        fetch('http://1.1.0.142:5000/forms/active/my/form_id='+id).then(function (response) {
+        fetch('http://1.1.1.18:5000/forms/active/my/form_id='+id).then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -67,7 +67,7 @@ class FetchClass {
     }
 
     getUserData(id, callback) {
-        fetch('http://1.1.0.142:5000/HRdata/'+id).then(function (response) {
+        fetch('http://1.1.1.18:5000/HRdata/'+id).then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -76,8 +76,8 @@ class FetchClass {
             console.error(err);
         });
     }
-    getNeedAprrove(id, callback) {
-        fetch('http://1.1.0.142:5000/forms/active/waiting/'+id).then(function (response) {
+    getWaitingApprovals(userId, callback) {
+        fetch('http://1.1.1.18:5000/forms/active/waiting/'+userId).then(function (response) {
             return response.json();
         }).then(function (data) {
             callback(data);
@@ -86,6 +86,11 @@ class FetchClass {
             console.error(err);
         });
     }
+
+    postStatusOfForm(json, userId, uuid) {
+        fetch('http://1.1.1.18:5000/forms/update/user=$userId&form_id=$uuid'.replace("$userId", userId).replace("$uuid", uuid))
+    }
+
 }
 
 export default FetchClass;
